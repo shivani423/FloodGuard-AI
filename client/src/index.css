@@ -1,0 +1,58 @@
+@import "tailwindcss";
+
+html { scroll-behavior: smooth; }
+body { font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+
+.grad-text { background: linear-gradient(90deg, #38bdf8, #22d3ee 50%, #34d399); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.hero-bg { background: radial-gradient(60rem 30rem at 80% -10%, rgba(14,165,233,.25), transparent 60%), radial-gradient(40rem 25rem at 0% 20%, rgba(16,185,129,.12), transparent 60%); }
+.glass { background: rgba(15,23,42,.65); border: 1px solid rgba(148,163,184,.15); backdrop-filter: blur(10px); }
+
+@keyframes wave { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+@keyframes floaty { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
+@keyframes ping-slow { 75%,100% { transform: scale(2.2); opacity: 0; } }
+.wave { animation: wave 6s linear infinite; }
+.wave2 { animation: wave 9s linear infinite reverse; }
+.floaty { animation: floaty 5s ease-in-out infinite; }
+.ping-slow { animation: ping-slow 2s cubic-bezier(0,0,.2,1) infinite; }
+
+details > summary { list-style: none; cursor: pointer; }
+details > summary::-webkit-details-marker { display: none; }
+details[open] .chev { transform: rotate(180deg); }
+
+/* ---------- Light theme: slate scale ulta kar dete hain, baaki classes khud badal jati hain ---------- */
+[data-theme="light"] {
+  --color-slate-50: #020617;
+  --color-slate-100: #0f172a;
+  --color-slate-200: #1e293b;
+  --color-slate-300: #334155;
+  --color-slate-400: #475569;
+  --color-slate-500: #64748b;
+  --color-slate-600: #94a3b8;
+  --color-slate-700: #cbd5e1;
+  --color-slate-800: #e2e8f0;
+  --color-slate-900: #ffffff;
+  --color-slate-950: #f1f5f9;
+
+  --color-sky-300: #0369a1;
+  --color-sky-400: #0284c7;
+  --color-emerald-400: #059669;
+  --color-yellow-200: #854d0e;
+  --color-yellow-400: #a16207;
+  --color-red-400: #dc2626;
+}
+[data-theme="light"] .glass {
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(15, 23, 42, 0.1);
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.06);
+}
+[data-theme="light"] .hero-bg {
+  background:
+    radial-gradient(60rem 30rem at 80% -10%, rgba(14, 165, 233, 0.18), transparent 60%),
+    radial-gradient(40rem 25rem at 0% 20%, rgba(16, 185, 129, 0.12), transparent 60%);
+}
+body, header, .glass { transition: background-color .25s, color .25s, border-color .25s; }
+
+/* ---------- Severity colors (theme ke saath badalte hain) ---------- */
+:root { --sev-low: #34d399; --sev-moderate: #facc15; --sev-high: #fb923c; --sev-severe: #f87171; }
+[data-theme="light"] { --sev-low: #059669; --sev-moderate: #a16207; --sev-high: #c2410c; --sev-severe: #dc2626; }
+.leaflet-container { font-family: inherit; }

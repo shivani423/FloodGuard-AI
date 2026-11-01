@@ -1,0 +1,16 @@
+
+{
+  "name": "floodguard-ai",
+  "version": "1.0.0",
+  "description": "IoT + AI/ML + MERN prototype for heavy-rainfall early warning and flood-risk monitoring (ESP32 + HC-SR04). Prototype / demo only. Not a replacement for official flood warning systems. Zones, shelters and simulated nodes are SAMPLE data. The ML model is trained on SYNTHETIC data.",
+  "main": "index.js",
+  "scripts": {
+    "dev": "concurrently \"npm run dev --prefix server\" \"npm run dev --prefix client\" \"python -m uvicorn app:app --app-dir ml-service --host 0.0.0.0 --port 8000\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^10.0.6"
+  }
+}
